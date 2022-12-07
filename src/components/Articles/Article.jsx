@@ -19,7 +19,7 @@ const Article = ({ article }) => {
 			<a href={url}>
 				<div className="card">
 					<div className="coverImg">
-						<img src={coverImg} alt={`${title} Cover.`} />
+						{coverImg && <img src={coverImg} alt={`${title} Cover.`} />}
 					</div>
 					<div className="content">
 						<div className="meta">

@@ -1,11 +1,53 @@
 @import './themes.scss';
 
 header {
-	border: 1px solid;
-
 	@include themify() {
     color: t(textColor);  
     background-color: t(backgroundColor);
-		border-color: t(textColor);
   }
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+
+		nav {
+			a {
+				text-decoration: none;
+				font-size: 20px;
+				margin: 0 20px;
+
+				@include themify() {
+					color: t(textColor);
+
+					&:hover {
+						color: t(textHoverColor)
+					}
+				}
+			}
+		}
+	}
+
+	.themeSwitch {
+		position: fixed;
+		bottom: 40px;
+		right: 40px;
+		border: none;
+		border-radius: 50px;
+		padding: 10px;
+		display: flex;
+		align-items: center;
+
+		@include themify() {
+			color: t(buttonColor);  
+			background-color: t(buttonBackground);
+		}
+
+		img {
+			@include themify() {
+				fill: t(buttonColor);
+			}
+		}
+	}
 }

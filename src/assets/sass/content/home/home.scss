@@ -1,5 +1,17 @@
 @import './home_responsive.scss';
 
 .home {
-  text-align: center;
+  .Articles-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    article {
+      width: calc(100%/4);
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

@@ -10,7 +10,7 @@ function Layout() {
 	return (
 		<div className={theme}>
 			<Header>
-				<p>Search + filters</p>
+				<p> </p>
 			</Header>
 			<main>
 				<Outlet />

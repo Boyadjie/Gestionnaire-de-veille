@@ -1,6 +1,9 @@
 import '@sass/content/header.scss';
 
 import Menu from '@component/Header/Menu';
+import moon from '@image/icons/moon.svg';
+import sun from '@image/icons/sun.svg';
+import logo from '@image/logo.svg';
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
@@ -16,19 +19,21 @@ const Header = ({ children }) => {
 	return (
 		<header>
 			<div className="top">
+				<img className="logo" src={logo} alt="Emeric Logo" />
 				<Menu />
-				{theme}
-				<h1>Leave the code cleaner than you found it.</h1>
-				<button
-					type="button"
-					className="themeSwitch"
-					onClick={() => {
-						changeTheme();
-					}}>
-					Switch Theme
-				</button>
 			</div>
-			{children && <div className="bottom">{children}</div>}
+			<div className="bottom">{children}</div>
+			<button
+				type="button"
+				className="themeSwitch"
+				onClick={() => {
+					changeTheme();
+				}}>
+				{theme === 'theme-light' && (
+					<img src={moon} alt="Switch to dark theme." />
+				)}
+				{theme === 'theme-dark' && <img src={sun} alt="Switch to light theme." />}
+			</button>
 		</header>
 	);
 };
