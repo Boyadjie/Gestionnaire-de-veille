@@ -28,11 +28,11 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 
 ### 🗞 Home page - Liste des articles dev.to
 
-- [ ] Fetching des données d'articles en fonction de la recherche de l'utilisateur avec une valeur par default (`React`).
-- [ ] Affichage des articles dans une grille sous forme de card.
-  - [ ] Affichage des informations de l'article (titre, auteur, date de publication, description, tags et image).
-  - [ ] Redirection vers l'article au clic.
-  - [ ] Affichage d'un loader pendant le chargement des données.
+- [🟢] Fetching des données d'articles en fonction de la recherche de l'utilisateur avec une valeur par default (`React`).
+- [🟢] Affichage des articles dans une grille sous forme de card.
+  - [🟢] Affichage des informations de l'article (titre, auteur, date de publication, description, tags et image).
+  - [🟢] Redirection vers l'article au clic.
+  - [🟢] Affichage d'un loader pendant le chargement des données.
 - [ ] Système de filtre des articles.
 - [ ] Système de tri en fonction de la date de publication des articles.
 - [ ] Accès rapide à la page Ma Liste.

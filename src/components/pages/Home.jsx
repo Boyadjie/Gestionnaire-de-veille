@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<div className="home">
 			<h1>Home</h1>
-			<Articles searchInput="react" />
+			<Articles searchInput="React" />
 		</div>
 	);
 }

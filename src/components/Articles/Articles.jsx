@@ -8,12 +8,12 @@ import Loader from '../Loader';
 const Articles = ({ searchInput }) => {
 	const { isLoading, articles, error } = useArticles(searchInput);
 	return (
-		<>
+		<div className="Articles-list">
 			{isLoading && <Loader />}
 			{error && <p className="error">{error}</p>}
 			{!isLoading &&
 				articles.map((article) => <Article key={article.id} article={article} />)}
-		</>
+		</div>
 	);
 };
 

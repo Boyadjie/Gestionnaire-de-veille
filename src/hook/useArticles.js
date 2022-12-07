@@ -10,7 +10,7 @@ export default function useArticles(searchInput) {
 			try {
 				setIsLoading(true);
 				const resp = await fetch(
-					`https://dev.to/api/articles?tag=${searchInput}`,
+					`https://dev.to/api/articles?tag=${searchInput.toLowerCase()}`,
 				);
 				const data = await resp.json();
 				setArticles(data);
