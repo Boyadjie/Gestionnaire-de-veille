@@ -1,0 +1,11 @@
+@import './themes.scss';
+
+header {
+	border: 1px solid;
+
+	@include themify() {
+    color: t(textColor);  
+    background-color: t(backgroundColor);
+		border-color: t(textColor);
+  }
+}
