@@ -33,8 +33,8 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
   - [🟢] Affichage des informations de l'article (titre, auteur, date de publication, description, tags et image).
   - [🟢] Redirection vers l'article au clic.
   - [🟢] Affichage d'un loader pendant le chargement des données.
-- [ ] Système de filtre des articles.
-- [ ] Système de tri en fonction de la date de publication des articles.
+- [🟢] Système de filtre des articles.
+- [🟢] Système de tri en fonction de la date de publication des articles.
 - [🟢] Accès rapide à la page Ma Liste.
 
 <br/>
