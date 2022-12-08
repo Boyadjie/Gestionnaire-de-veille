@@ -9,6 +9,7 @@ $themes: (
     buttonColor: #fff,
     buttonBorder: 2px solid #fff,
     buttonBackground: #222,
+    shadow: #222,
   ),
   dark: (
     backgroundColor: #222,
@@ -20,6 +21,7 @@ $themes: (
     buttonColor: #333,
     buttonBorder: 1px solid #aaa,
     buttonBackground: #fff,
+    shadow: rgb(183, 183, 183),
   ),
 );
 

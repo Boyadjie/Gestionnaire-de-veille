@@ -1,3 +1,4 @@
+import unknow from '@image/unknow.png';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -9,38 +10,56 @@ const Article = ({ article }) => {
 		user,
 		tag_list: tags,
 		published_at: publicationDate,
-		cover_image: coverImg,
+		social_image: coverImg,
 	} = article;
 
 	const formatedDate = publicationDate.substr(0, 10);
 
 	return (
 		<article>
-			<a href={url}>
-				<div className="card">
-					<div className="coverImg">
+			<div className="card">
+				<div className="coverImg">
+					<a href={url}>
 						{coverImg && <img src={coverImg} alt={`${title} Cover.`} />}
+						{!coverImg && <img src={unknow} alt={`${title} Cover.`} />}
+					</a>
+				</div>
+				<div className="content">
+					<div className="tags">
+						{tags.map((tag) => (
+							<span key={tag} className="tag">
+								{tag}
+							</span>
+						))}
 					</div>
-					<div className="content">
-						<div className="meta">
-							<p>
-								Created by <strong>{user.name}</strong> the {formatedDate}
-							</p>
-						</div>
-						<div>
+					<div>
+						<a href={url}>
 							<h3>{title}</h3>
-							<p>{description}</p>
+						</a>
+						<p className="description">{description}</p>
+					</div>
+					<div className="meta">
+						<div className="user">
+							<img
+								src={user.profile_image_90}
+								alt={`${user.name} Profile`}
+							/>
+							<div>
+								<p>
+									By
+									<a href={`https://dev.to/${user.username}`}>
+										<strong>{user.name}</strong>
+									</a>
+								</p>
+								<p>{formatedDate}</p>
+							</div>
 						</div>
-						<div>
-							{tags.map((tag) => (
-								<span key={tag} className="tag">
-									{tag}
-								</span>
-							))}
+						<div className="fav">
+							<button type="button">icon</button>
 						</div>
 					</div>
 				</div>
-			</a>
+			</div>
 		</article>
 	);
 };

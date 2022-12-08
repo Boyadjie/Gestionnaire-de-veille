@@ -6,7 +6,7 @@ import React from 'react';
 function Home() {
 	return (
 		<div className="home">
-			<h1>View Articles : </h1>
+			<h1>React Articles : </h1>
 			<Articles searchInput="React" />
 		</div>
 	);

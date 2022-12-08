@@ -1,10 +1,11 @@
 @import './themes.scss';
 
 header {
+	position: relative;
+	
 	@include themify() {
-    color: t(textColor);  
-    background-color: t(backgroundColor);
-  }
+		box-shadow: 0 -20px 40px t('shadow');
+	}
 
 	.top {
 		display: flex;
