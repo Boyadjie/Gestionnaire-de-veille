@@ -1,6 +1,6 @@
 import Layout from '@component/Layout';
-import Favorites from '@component/pages/Favorites';
 import Home from '@component/pages/Home';
+import MyArticles from '@component/pages/MyArticles';
 import React, { useMemo, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ function App() {
 				<Routes>
 					<Route path="" element={<Layout />}>
 						<Route exact path="/" element={<Home />} />
-						<Route exact path="/favoris" element={<Favorites />} />
+						<Route exact path="/mes-articles" element={<MyArticles />} />
 					</Route>
 				</Routes>
 			</Router>

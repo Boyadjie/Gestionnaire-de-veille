@@ -1,14 +1,24 @@
 import '@sass/content/home/home.scss';
 
 import Articles from '@component/Articles/Articles';
-import React, { useState } from 'react';
+import useArticles from '@hook/useArticles';
+import React, { useEffect, useState } from 'react';
 
 import Filters from '../Filters/Filters';
 import Form from '../Filters/Form';
+import Loader from '../Loader';
 
 function Home() {
-	const [searchInput, setSearchInput] = useState('React');
+	const [searchInput, setSearchInput] = useState('react');
 	const [articlesList, setArticlesList] = useState([]);
+	const { isLoading, articles, error } = useArticles(searchInput);
+
+	useEffect(() => {
+		if (!isLoading) {
+			setArticlesList(articles);
+		}
+	}, [isLoading]);
+
 	return (
 		<div className="home">
 			<Form
@@ -17,8 +27,12 @@ function Home() {
 				setArticlesList={setArticlesList}>
 				<Filters />
 			</Form>
-			<h1>React Articles : </h1>
-			<Articles searchInput={searchInput} setArticlesList={setArticlesList} />
+			<h1>Articles à propos de {searchInput} : </h1>
+			{isLoading && <Loader />}
+			{error && <p className="error">{error}</p>}
+			{!isLoading && articlesList.length > 0 && (
+				<Articles articlesList={articlesList} />
+			)}
 		</div>
 	);
 }
