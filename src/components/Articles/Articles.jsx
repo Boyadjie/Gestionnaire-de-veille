@@ -8,7 +8,12 @@ import React, { useEffect, useState } from 'react';
 import Filters from '../Filters/Filters';
 import Order from '../Filters/Order';
 
-const Articles = ({ fetchedArticlesList, articlesList, setArticlesList }) => {
+const Articles = ({
+	fetchedArticlesList,
+	articlesList,
+	setArticlesList,
+	deleteArticle,
+}) => {
 	const [tags, setTags] = useState([]);
 
 	useEffect(() => {
@@ -26,13 +31,14 @@ const Articles = ({ fetchedArticlesList, articlesList, setArticlesList }) => {
 				fetchedArticlesList={fetchedArticlesList}
 				setArticlesList={setArticlesList}
 			/>
-			<Order
-				fetchedArticlesList={fetchedArticlesList}
-				setArticlesList={setArticlesList}
-			/>
+			<Order articlesList={articlesList} setArticlesList={setArticlesList} />
 			<div className="Articles-list">
 				{articlesList.map((article) => (
-					<Article key={article.id} article={article} />
+					<Article
+						key={article.id}
+						article={article}
+						deleteArticle={deleteArticle}
+					/>
 				))}
 			</div>
 		</>
@@ -43,6 +49,11 @@ Articles.propTypes = {
 	fetchedArticlesList: PropTypes.instanceOf(Array).isRequired,
 	articlesList: PropTypes.instanceOf(Array).isRequired,
 	setArticlesList: PropTypes.func.isRequired,
+	deleteArticle: PropTypes.func,
+};
+
+Articles.defaultProps = {
+	deleteArticle: null,
 };
 
 export default Articles;

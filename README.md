@@ -41,12 +41,12 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 
 ### 🔖 Ma Liste - Page perso d'articles
 
-- [ ] Affichage de vos articles ajoutés dans une grille sous forme de card.
-- [ ] Système de suppression des articles.
-  - [ ] Affichage d'un message de succès lors de la suppression.
-- [ ] Système de recherche des articles.
-- [ ] Système de filtre des articles.
-- [ ] Système de tri en fonction de la date de publication des articles.
+- [🟢] Affichage de vos articles ajoutés dans une grille sous forme de card.
+- [🟢] Système de suppression des articles.
+  - [🟢] Affichage d'un message de succès lors de la suppression.
+- [🟢] Système de recherche des articles.
+- [🟢] Système de filtre des articles.
+- [🟢] Système de tri en fonction de la date de publication des articles.
 
 <br/>
 
@@ -61,23 +61,23 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 
 ### 🤷🏼‍ Autres
 
-- [ ] Mise en place d'un thème sombre et d'un thème clair sur l'application
+- [🟢] Mise en place d'un thème sombre et d'un thème clair sur l'application
 - [ ] Ajout de style et/ou animations sur les composants.
 - [ ] Déploiement de l'application sur vercel. [🛟 AIDE](https://vercel.com/docs/concepts/git/vercel-for-github)
-- [ ] Mise à disposition du code sur github.
+- [🟢] Mise à disposition du code sur github.
 - [ ] On souhaite voir un code fonctionnel, propre, et organisé 😉
 
 <br/>
 
 ## 🎁 Bonus ( Les points suivants vous permettrons d'avoir plus que la note de base attribuée avec les features ci-dessus )
 
-- [ ] Intégrer un nouveau hook react (`useCallback`, `useMemo` ...)
+- [🟢] Intégrer un nouveau hook react (`useCallback`, `useMemo` ...)
 - [ ] Utiliser un pattern children react
-- [ ] Créer votre propre hook pour gérer le fetching des données à partir d'un tag
+- [🟢] Créer votre propre hook pour gérer le fetching des données à partir d'un tag
 - [ ] Système de pagination.
 - [ ] Système de modification des articles.
 - [ ] Mise en place et écriture de tests d'intégration sur un des composants.
-- [ ] Application responsive.
+- [🟢] Application responsive.
 
 <br/>
 

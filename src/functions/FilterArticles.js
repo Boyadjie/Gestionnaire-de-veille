@@ -28,3 +28,21 @@ export function orderByDate(articles, order = 'desc') {
 	}
 	return orderBy(articles, 'published_timestamp', order);
 }
+
+export function filterByTitle(articlesList, text) {
+	const matchingArticles = [];
+
+	articlesList.forEach((article) => {
+		const articleTitle = article.title.toLowerCase();
+		if (articleTitle.includes(text.toLowerCase())) {
+			if (
+				matchingArticles.find((element) => element.id === article.id) ===
+				undefined
+			) {
+				matchingArticles.push(article);
+			}
+		}
+	});
+
+	return matchingArticles;
+}

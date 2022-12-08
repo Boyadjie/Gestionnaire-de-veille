@@ -3,20 +3,20 @@ import React, { useState } from 'react';
 
 import { orderByDate } from '../../functions/FilterArticles';
 
-const Order = ({ fetchedArticlesList, setArticlesList }) => {
+const Order = ({ articlesList, setArticlesList }) => {
 	const [ordered, setOrdered] = useState(false);
 
 	const handleOrder = () => {
 		setOrdered(!ordered);
 		if (!ordered) {
-			setArticlesList(orderByDate(fetchedArticlesList, 'desc'));
+			setArticlesList(orderByDate(articlesList, 'desc'));
 		} else {
-			setArticlesList(orderByDate(fetchedArticlesList, 'asc'));
+			setArticlesList(orderByDate(articlesList, 'asc'));
 		}
 	};
 
 	const handleReset = () => {
-		setArticlesList(fetchedArticlesList);
+		setArticlesList(articlesList);
 	};
 	return (
 		<div>
@@ -32,7 +32,7 @@ const Order = ({ fetchedArticlesList, setArticlesList }) => {
 };
 
 Order.propTypes = {
-	fetchedArticlesList: PropTypes.instanceOf(Array).isRequired,
+	articlesList: PropTypes.instanceOf(Array).isRequired,
 	setArticlesList: PropTypes.func.isRequired,
 };
 
