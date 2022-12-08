@@ -4,12 +4,11 @@ import Menu from '@component/Header/Menu';
 import moon from '@image/icons/moon.svg';
 import sun from '@image/icons/sun.svg';
 import logo from '@image/logo.svg';
-import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 
-import ThemeContext from '../../ThemeContext';
+import ThemeContext from '../../contexts/ThemeContext';
 
-const Header = ({ children }) => {
+const Header = () => {
 	const { theme, setTheme } = useContext(ThemeContext);
 
 	const changeTheme = () => {
@@ -22,7 +21,6 @@ const Header = ({ children }) => {
 				<img className="logo" src={logo} alt="Emeric Logo" />
 				<Menu />
 			</div>
-			<div className="bottom">{children}</div>
 			<button
 				type="button"
 				className="themeSwitch"
@@ -36,10 +34,6 @@ const Header = ({ children }) => {
 			</button>
 		</header>
 	);
-};
-
-Header.propTypes = {
-	children: PropTypes.node.isRequired,
 };
 
 export default Header;

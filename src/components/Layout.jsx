@@ -1,19 +1,18 @@
 import Header from '@component/Header/Header';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import ThemeContext from '../ThemeContext';
+import ThemeContext from '../contexts/ThemeContext';
 
 function Layout() {
 	const { theme } = useContext(ThemeContext);
+	const [articlesList, setArticlesList] = useState([]);
 
 	return (
 		<div className={theme}>
-			<Header>
-				<p> </p>
-			</Header>
+			<Header />
 			<main>
-				<Outlet />
+				<Outlet articlesList={articlesList} setArticlesList={setArticlesList} />
 			</main>
 		</div>
 	);

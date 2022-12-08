@@ -35,7 +35,7 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
   - [🟢] Affichage d'un loader pendant le chargement des données.
 - [ ] Système de filtre des articles.
 - [ ] Système de tri en fonction de la date de publication des articles.
-- [ ] Accès rapide à la page Ma Liste.
+- [🟢] Accès rapide à la page Ma Liste.
 
 <br/>
 

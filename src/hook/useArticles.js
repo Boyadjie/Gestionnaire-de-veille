@@ -20,7 +20,7 @@ export default function useArticles(searchInput) {
 				setIsLoading(false);
 			}
 		})();
-	}, []);
+	}, [searchInput]);
 
 	return {
 		isLoading,
