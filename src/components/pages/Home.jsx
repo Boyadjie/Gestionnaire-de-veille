@@ -1,10 +1,8 @@
-import '@sass/content/home/home.scss';
-
 import Articles from '@component/Articles/Articles';
 import useArticles from '@hook/useArticles';
 import React, { useEffect, useState } from 'react';
 
-import Form from '../Filters/Form';
+import Search from '../Filters/Search';
 import Loader from '../Loader';
 
 function Home() {
@@ -20,10 +18,18 @@ function Home() {
 		}
 	}, [isLoading]);
 
+	const handleSearch = (value) => {
+		if (value === '' || value === ' ') {
+			setSearchInput('react');
+		} else {
+			setSearchInput(value);
+		}
+	};
+
 	return (
 		<div className="home">
-			<Form setSearchInput={setSearchInput} />
-			<h1>Articles à propos de {searchInput} : </h1>
+			<Search handleSearch={handleSearch} />
+			<h1>Articles about {searchInput} : </h1>
 			{isLoading && <Loader />}
 			{error && <p className="error">{error}</p>}
 			{!isLoading && articlesList.length > 0 && (

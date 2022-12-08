@@ -1,3 +1,5 @@
+import '@sass/content/articles.scss';
+
 import Article from '@component/Articles/Article';
 import { union } from 'lodash';
 import PropTypes from 'prop-types';

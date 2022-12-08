@@ -7,8 +7,8 @@ const Menu = () => {
 			<NavLink exact="true" to="/">
 				Accueil
 			</NavLink>
-			<NavLink exact="true" to="/mes-articles">
-				Mes Articles
+			<NavLink exact="true" to="/my-articles">
+				My Articles
 			</NavLink>
 		</nav>
 	);

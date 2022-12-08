@@ -10,10 +10,12 @@ const Article = ({ article }) => {
 		user,
 		tag_list: tags,
 		published_at: publicationDate,
+		readable_publish_date: readablePublicationDate,
 		social_image: coverImg,
 	} = article;
 
-	const formatedDate = publicationDate.substr(0, 10);
+	const date = new Date(publicationDate);
+	const formatedDate = `${readablePublicationDate} ${date.getFullYear()}`;
 
 	return (
 		<article>
@@ -38,24 +40,16 @@ const Article = ({ article }) => {
 						</a>
 						<p className="description">{description}</p>
 					</div>
-					<div className="meta">
-						<div className="user">
-							<img
-								src={user.profile_image_90}
-								alt={`${user.name} Profile`}
-							/>
-							<div>
-								<p>
-									By
-									<a href={`https://dev.to/${user.username}`}>
-										<strong>{user.name}</strong>
-									</a>
-								</p>
-								<p>{formatedDate}</p>
-							</div>
-						</div>
-						<div className="fav">
-							<button type="button">icon</button>
+					<div className="user">
+						<img src={user.profile_image_90} alt={`${user.name} Profile`} />
+						<div>
+							<p>
+								By
+								<a href={`https://dev.to/${user.username}`}>
+									<strong>{user.name}</strong>
+								</a>
+							</p>
+							<p>{formatedDate}</p>
 						</div>
 					</div>
 				</div>
