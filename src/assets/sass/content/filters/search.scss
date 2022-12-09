@@ -1,0 +1,42 @@
+@import '../themes.scss';
+
+.searchbar {
+	width: max-content;
+	margin: 20px auto;
+
+	#search, #send {
+		padding: 5px 10px;
+		font-size: 24px;
+	}
+
+	#search {
+		border-radius: 10px 0 0 10px;
+
+		@include themify() {
+			border: 2px solid t(buttonBackground);
+			border-right: 0px;
+			background-color: t(backgroundColor);
+			color: t(buttonBackground);
+
+			&:focus-visible {
+				border: 2px solid t(textColor);
+				border-right: 0px;
+				outline: none;
+			}
+
+			&::placeholder {
+				color: t(placeholder);
+			}
+		}
+	}
+
+	#send {
+		border-radius: 0 10px 10px 0;
+
+		@include themify() {
+			border: 2px solid t(blueButton);
+			background-color: t(blueButton);
+			color: t(blueButtonText);
+		}
+	}
+}

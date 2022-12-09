@@ -9,7 +9,11 @@ const Filters = ({ tags, fetchedArticlesList, setArticlesList }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const tagToAdd = event.target[0].value;
-		setActiveFilters([...activeFilters, tagToAdd]);
+		if (tagToAdd !== 0) {
+			setActiveFilters([...activeFilters, tagToAdd]);
+		} else {
+			setActiveFilters([...activeFilters]);
+		}
 	};
 
 	const handleRemoveTag = (tag) => {
@@ -30,14 +34,12 @@ const Filters = ({ tags, fetchedArticlesList, setArticlesList }) => {
 				onSubmit={(e) => {
 					handleSubmit(e);
 				}}>
-				<select name="tag" id="tag-select">
-					<option value="0">--Choose an tag to add--</option>
+				<input type="text" name="select-tag" id="select-tag" list="tag-list" />
+				<datalist name="tag" id="tag-list">
 					{tags.map((tag) => (
-						<option key={tag} value={tag}>
-							{tag}
-						</option>
+						<option key={tag} value={tag} />
 					))}
-				</select>
+				</datalist>
 				<input type="submit" value="Ajouter" />
 			</form>
 			<div className="activeFilters">

@@ -20,6 +20,10 @@ const MyArticles = () => {
 		}
 	};
 
+	const handleReset = () => {
+		setMyArticles(fetchedArticlesList);
+	};
+
 	const handleDeleteArticle = (id) => {
 		const updatedArticles = [...myArticles];
 		const articleToRemoveIndex = updatedArticles.findIndex(
@@ -33,7 +37,7 @@ const MyArticles = () => {
 	return (
 		<div>
 			<ToastContainer />
-			<Search handleSearch={handleSearch} />
+			<Search handleSearch={handleSearch} placeholder="Search by title ..." />
 			<h1>My articles :</h1>
 			{myArticles.length > 0 && (
 				<Articles
@@ -46,6 +50,9 @@ const MyArticles = () => {
 			{myArticles.length === 0 && (
 				<div>
 					<p>You don&apos;t have any articles here !</p>
+					<button type="button" onClick={handleReset}>
+						Reset
+					</button>
 				</div>
 			)}
 		</div>

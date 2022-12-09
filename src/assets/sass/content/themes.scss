@@ -10,6 +10,9 @@ $themes: (
     buttonBorder: 2px solid #fff,
     buttonBackground: #222,
     shadow: #222,
+    blueButton: #408bbd,
+    blueButtonText: #fff,
+    placeholder: rgb(133, 133, 133),
   ),
   dark: (
     backgroundColor: #222,
@@ -22,6 +25,9 @@ $themes: (
     buttonBorder: 1px solid #aaa,
     buttonBackground: #fff,
     shadow: rgb(183, 183, 183),
+    blueButton: #408bbd,
+    blueButtonText: #fff,
+    placeholder: rgb(213, 213, 213),
   ),
 );
 

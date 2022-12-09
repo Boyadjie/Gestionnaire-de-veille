@@ -26,9 +26,13 @@ function Home() {
 		}
 	};
 
+	const handleReset = () => {
+		setArticlesList(fetchedArticlesList);
+	};
+
 	return (
 		<div className="home">
-			<Search handleSearch={handleSearch} />
+			<Search handleSearch={handleSearch} placeholder="Search by tag ..." />
 			<h1>Articles about {searchInput} : </h1>
 			{isLoading && <Loader />}
 			{error && <p className="error">{error}</p>}
@@ -38,6 +42,14 @@ function Home() {
 					articlesList={articlesList}
 					setArticlesList={setArticlesList}
 				/>
+			)}
+			{articlesList.length === 0 && (
+				<div>
+					<p>You don&apos;t have any articles here !</p>
+					<button type="button" onClick={handleReset}>
+						Reset
+					</button>
+				</div>
 			)}
 		</div>
 	);
