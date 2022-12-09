@@ -1,17 +1,19 @@
 import '@sass/content/notFound.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
-import maListe from '../../data/maListe.json';
+import LocalArticles from '../../contexts/LocalArticles';
 import { filterByTitle } from '../../functions/FilterArticles';
 import Articles from '../Articles/Articles';
 import Search from '../Filters/Search';
 
 const MyArticles = () => {
-	const [fetchedArticlesList] = useState([...maListe]);
-	const [myArticles, setMyArticles] = useState([...maListe]);
+	const { localArticles } = useContext(LocalArticles);
+
+	const [fetchedArticlesList] = useState([...localArticles]);
+	const [myArticles, setMyArticles] = useState([...localArticles]);
 
 	const handleSearch = (value) => {
 		if (value === '' || value === ' ') {

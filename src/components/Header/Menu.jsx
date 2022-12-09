@@ -10,6 +10,9 @@ const Menu = () => {
 			<NavLink exact="true" to="/my-articles">
 				My Articles
 			</NavLink>
+			<NavLink exact="true" to="/new">
+				Add New Article
+			</NavLink>
 		</nav>
 	);
 };

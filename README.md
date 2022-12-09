@@ -53,7 +53,7 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 ### 📝 Formulaire d'ajout d'articles
 
 - [ ] Système d'ajout d'un article en local.
-  - [ ] Affichage d'un formulaire d'ajout d'un article ( avec possiblement titre, auteur, date de publication, description, tags, image et lien vers l'article).
+  - [🟢] Affichage d'un formulaire d'ajout d'un article ( avec possiblement titre, auteur, date de publication, description, tags, image et lien vers l'article).
   - [ ] Système de validation du formulaire.
   - [ ] Affichage d'un message de succès lors de l'ajout.
 
@@ -72,7 +72,7 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 ## 🎁 Bonus ( Les points suivants vous permettrons d'avoir plus que la note de base attribuée avec les features ci-dessus )
 
 - [🟢] Intégrer un nouveau hook react (`useCallback`, `useMemo` ...)
-- [ ] Utiliser un pattern children react
+- [🟢] Utiliser un pattern children react
 - [🟢] Créer votre propre hook pour gérer le fetching des données à partir d'un tag
 - [ ] Système de pagination.
 - [ ] Système de modification des articles.
