@@ -1,12 +1,18 @@
 @import './themes.scss';
 
+.filters-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
 .Articles-list {
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
 	gap: 25px;
 	justify-content: center;
-	margin: 40px auto;
+	margin: 20px auto;
 
 	article {
 		width: 410px;
@@ -43,27 +49,6 @@
 				flex-direction: column;
 				justify-content: space-between;
 				height: 50%;
-
-				.tags {
-					width: 100%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					gap: 10px;
-					padding: 10px 0;
-
-					.tag {
-						display: block;
-						padding: 5px 10px;
-						font-size: 12px;
-						border-radius: 5px;
-
-						@include themify() {
-							color: t(buttonColor);
-							background: t(buttonBackground);
-						}
-					}
-				}
 
 				h3 {
 					font-size: 20px;

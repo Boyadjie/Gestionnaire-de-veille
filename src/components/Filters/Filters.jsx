@@ -1,3 +1,5 @@
+import '@sass/content/filters/filters.scss';
+
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
@@ -29,20 +31,26 @@ const Filters = ({ tags, fetchedArticlesList, setArticlesList }) => {
 	}, [activeFilters]);
 
 	return (
-		<div>
+		<div className="filters">
 			<form
 				onSubmit={(e) => {
 					handleSubmit(e);
 				}}>
-				<input type="text" name="select-tag" id="select-tag" list="tag-list" />
+				<input
+					type="text"
+					name="select-tag"
+					id="select-tag"
+					list="tag-list"
+					placeholder="Filter by tags"
+				/>
 				<datalist name="tag" id="tag-list">
 					{tags.map((tag) => (
 						<option key={tag} value={tag} />
 					))}
 				</datalist>
-				<input type="submit" value="Ajouter" />
+				<input type="submit" value="+" id="add" />
 			</form>
-			<div className="activeFilters">
+			<div className="tags">
 				{activeFilters.length > 0 &&
 					activeFilters.map((tag) => (
 						<span key={tag} className="tag">

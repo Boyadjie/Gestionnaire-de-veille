@@ -26,12 +26,18 @@ const Articles = ({
 
 	return (
 		<>
-			<Filters
-				tags={tags}
-				fetchedArticlesList={fetchedArticlesList}
-				setArticlesList={setArticlesList}
-			/>
-			<Order articlesList={articlesList} setArticlesList={setArticlesList} />
+			<div className="filters-bar">
+				<Filters
+					tags={tags}
+					fetchedArticlesList={fetchedArticlesList}
+					setArticlesList={setArticlesList}
+				/>
+				<Order
+					fetchedArticlesList={fetchedArticlesList}
+					articlesList={articlesList}
+					setArticlesList={setArticlesList}
+				/>
+			</div>
 			<div className="Articles-list">
 				{articlesList.map((article) => (
 					<Article

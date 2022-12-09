@@ -1,9 +1,11 @@
+import '@sass/content/filters/order.scss';
+
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import { orderByDate } from '../../functions/FilterArticles';
 
-const Order = ({ articlesList, setArticlesList }) => {
+const Order = ({ fetchedArticlesList, articlesList, setArticlesList }) => {
 	const [ordered, setOrdered] = useState(false);
 
 	const handleOrder = () => {
@@ -16,10 +18,10 @@ const Order = ({ articlesList, setArticlesList }) => {
 	};
 
 	const handleReset = () => {
-		setArticlesList(articlesList);
+		setArticlesList(fetchedArticlesList);
 	};
 	return (
-		<div>
+		<div className="order">
 			<button type="button" onClick={handleOrder}>
 				{ordered && <span>Order By oldest</span>}
 				{!ordered && <span>Order By latest</span>}
@@ -32,6 +34,7 @@ const Order = ({ articlesList, setArticlesList }) => {
 };
 
 Order.propTypes = {
+	fetchedArticlesList: PropTypes.instanceOf(Array).isRequired,
 	articlesList: PropTypes.instanceOf(Array).isRequired,
 	setArticlesList: PropTypes.func.isRequired,
 };

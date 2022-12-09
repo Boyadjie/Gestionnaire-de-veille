@@ -1,3 +1,5 @@
+import '@sass/content/notFound.scss';
+
 import Articles from '@component/Articles/Articles';
 import useArticles from '@hook/useArticles';
 import React, { useEffect, useState } from 'react';
@@ -43,8 +45,8 @@ function Home() {
 					setArticlesList={setArticlesList}
 				/>
 			)}
-			{articlesList.length === 0 && (
-				<div>
+			{!isLoading && articlesList.length === 0 && (
+				<div className="no-articles">
 					<p>You don&apos;t have any articles here !</p>
 					<button type="button" onClick={handleReset}>
 						Reset

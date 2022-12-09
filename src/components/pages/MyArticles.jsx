@@ -1,3 +1,4 @@
+import '@sass/content/notFound.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 import React, { useState } from 'react';
@@ -48,7 +49,7 @@ const MyArticles = () => {
 				/>
 			)}
 			{myArticles.length === 0 && (
-				<div>
+				<div className="no-articles">
 					<p>You don&apos;t have any articles here !</p>
 					<button type="button" onClick={handleReset}>
 						Reset

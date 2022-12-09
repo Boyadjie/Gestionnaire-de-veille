@@ -1,0 +1,67 @@
+@import '../themes.scss';
+
+.filters {
+	display: block;
+	width: max-content;
+	margin: 10px 0;
+
+	form {
+		display: flex;
+		justify-content: flex-start;
+		gap: 10px;
+
+		#select-tag {
+			font-size: 18px;
+			padding-bottom: 5px;
+
+			@include themify() {
+				border: 0px;
+				border-bottom: 2px solid t(buttonBackground);
+				background-color: t(backgroundColor);
+				color: t(buttonBackground);
+	
+				&:focus-visible {
+					border: 0px;
+					border-bottom: 2px solid t(textColor);
+					outline: none;
+				}
+	
+				&::placeholder {
+					color: t(placeholder);
+				}
+			}
+		}
+
+		#add {
+			font-size: 18px;
+			padding: 5px 10px;
+
+			@include themify() {
+				border: 0px;
+				border-radius: 5px;
+				background-color: t(buttonBackground);
+				color: t(buttonColor);
+			}
+		}
+	}
+
+	.tags {
+		justify-content: flex-start;
+		
+		.tag {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+
+			button {
+				background: none;
+				border: 0px;
+				padding: 0;
+
+				@include themify() {
+					color: t(buttonColor);
+				}
+			}
+		}
+	}
+}
