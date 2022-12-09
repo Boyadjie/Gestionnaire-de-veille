@@ -26,7 +26,7 @@ const Article = ({ article, deleteArticle }) => {
 		<article>
 			<div className="card">
 				<div className="coverImg">
-					<a href={url}>
+					<a href={url} target="_blank" rel="noreferrer">
 						{coverImg && <img src={coverImg} alt={`${title} Cover.`} />}
 						{!coverImg && <img src={unknow} alt={`${title} Cover.`} />}
 					</a>
@@ -40,7 +40,7 @@ const Article = ({ article, deleteArticle }) => {
 						))}
 					</div>
 					<div>
-						<a href={url}>
+						<a href={url} target="_blank" rel="noreferrer">
 							<h3>{title}</h3>
 						</a>
 						<p className="description">{description}</p>
@@ -56,9 +56,15 @@ const Article = ({ article, deleteArticle }) => {
 							<div>
 								<p>
 									By
-									<a href={`https://dev.to/${user.username}`}>
-										<strong>{user.name}</strong>
-									</a>
+									{user.username && (
+										<a
+											href={`https://dev.to/${user.username}`}
+											target="_blank"
+											rel="noreferrer">
+											<strong>{user.name}</strong>
+										</a>
+									)}
+									{!user.username && <strong>{user.name}</strong>}
 								</p>
 								<p>{formatedDate}</p>
 							</div>

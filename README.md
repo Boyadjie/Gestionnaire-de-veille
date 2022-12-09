@@ -52,10 +52,10 @@ On utilisera pour cela l'endpoint `https://dev.to/api/articles?tag={xxx}` qui no
 
 ### 📝 Formulaire d'ajout d'articles
 
-- [ ] Système d'ajout d'un article en local.
+- [🟢] Système d'ajout d'un article en local.
   - [🟢] Affichage d'un formulaire d'ajout d'un article ( avec possiblement titre, auteur, date de publication, description, tags, image et lien vers l'article).
-  - [ ] Système de validation du formulaire.
-  - [ ] Affichage d'un message de succès lors de l'ajout.
+  - [🟢] Système de validation du formulaire.
+  - [🟢] Affichage d'un message de succès lors de l'ajout.
 
 <br/>
 
