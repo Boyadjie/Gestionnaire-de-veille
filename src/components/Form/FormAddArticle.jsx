@@ -122,18 +122,20 @@ const FormAddArticle = ({ children, handleAddArticle }) => {
 					handleSubmit(e);
 				}}>
 				<div>
-					<input
-						type="text"
-						name="articleLink"
-						placeholder="Article Link"
-						required
-					/>
-				</div>
-				<div>
-					<input type="text" name="imageLink" placeholder="Image Link" />
-				</div>
-				<div>
-					<input type="text" name="title" placeholder="Title" required />
+					<div>
+						<input
+							type="text"
+							name="articleLink"
+							placeholder="Article Link"
+							required
+						/>
+					</div>
+					<div>
+						<input type="text" name="imageLink" placeholder="Image Link" />
+					</div>
+					<div>
+						<input type="text" name="title" placeholder="Title" required />
+					</div>
 				</div>
 				<div>
 					<textarea

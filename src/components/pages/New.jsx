@@ -1,3 +1,5 @@
+import '@sass/content/form/formAddArticles.scss';
+
 import React, { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -14,11 +16,11 @@ const New = () => {
 		toast(`Article number ${newId} had successfully been created`);
 	};
 	return (
-		<div>
+		<div className="new-article">
 			<ToastContainer />
 			<h1>Add a new article: </h1>
 			<FormAddArticle handleAddArticle={handleAddArticle}>
-				<input type="submit" value="Add" />
+				<input type="submit" value="Add" id="add-article" />
 			</FormAddArticle>
 		</div>
 	);
