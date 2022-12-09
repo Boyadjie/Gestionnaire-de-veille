@@ -45,38 +45,38 @@ const Article = ({ article, deleteArticle }) => {
 						</a>
 						<p className="description">{description}</p>
 					</div>
-					<div className="user">
-						{user.profile_image_90 && (
-							<img
-								src={user.profile_image_90}
-								alt={`${user.name} Profile`}
-							/>
-						)}
-						<div>
-							<p>
-								By
-								<a href={`https://dev.to/${user.username}`}>
-									<strong>{user.name}</strong>
-								</a>
-							</p>
-							<p>{formatedDate}</p>
+					<div className="card-footer">
+						<div className="user">
+							{user.profile_image_90 && (
+								<img
+									src={user.profile_image_90}
+									alt={`${user.name} Profile`}
+								/>
+							)}
+							<div>
+								<p>
+									By
+									<a href={`https://dev.to/${user.username}`}>
+										<strong>{user.name}</strong>
+									</a>
+								</p>
+								<p>{formatedDate}</p>
+							</div>
 						</div>
-					</div>
 
-					{deleteArticle != null && (
-						<button
-							type="button"
-							className="delete-article"
-							onClick={(e) => handleDelete(e, article.id)}>
-							<svg
-								width="261"
-								height="261"
-								viewBox="0 0 261 261"
-								xmlns="http://www.w3.org/2000/svg">
-								<path d="M206.625 43.5H168.562L157.688 32.625H103.312L92.4375 43.5H54.375V65.25H206.625M65.25 206.625C65.25 212.393 67.5415 217.926 71.6204 222.005C75.6993 226.083 81.2315 228.375 87 228.375H174C179.768 228.375 185.301 226.083 189.38 222.005C193.458 217.926 195.75 212.393 195.75 206.625V76.125H65.25V206.625Z" />
-							</svg>
-						</button>
-					)}
+						{deleteArticle != null && (
+							<button
+								type="button"
+								className="delete-article"
+								onClick={(e) => handleDelete(e, article.id)}>
+								<svg
+									viewBox="0 0 261 261"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M206.625 43.5H168.562L157.688 32.625H103.312L92.4375 43.5H54.375V65.25H206.625M65.25 206.625C65.25 212.393 67.5415 217.926 71.6204 222.005C75.6993 226.083 81.2315 228.375 87 228.375H174C179.768 228.375 185.301 226.083 189.38 222.005C193.458 217.926 195.75 212.393 195.75 206.625V76.125H65.25V206.625Z" />
+								</svg>
+							</button>
+						)}
+					</div>
 				</div>
 			</div>
 		</article>
